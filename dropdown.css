@@ -11,15 +11,18 @@
     font-size: 30px;
 }
 
-/* lägger allt i ett ovanpå m z-index - dock fel position*/
+/* med de tre sista left, top och width hamnar den på rätt ställe */
 .dropdown-content {
   display: block;
-    /* display: none; */
+    display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: aliceblue;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+  left: 213px;
+  top: 70.5px;
+  width: 170.5px;
 }
 /* listar dropdown content */
 .dropdown-content a {
@@ -31,15 +34,12 @@
   text-align: left;
 }
 
-/* .dropdown-container {
-  float: left;
-  overflow: hidden;
-} */
-.topnav a:hover {
+
+.topnav a:hover { 
     background-color: rgb(180, 172, 172);
     color: #ea5757;
 }
-.dropdown-container:hover {
+.dropdown-container:hover .dropdown-content {
   display: block;
 }
 .topnav a.active {
@@ -55,6 +55,9 @@
 }
 .dropdown-container:hover .dropdown-content {
   display: block;
+}
+.dropdown-content a:hover {
+    background-color: rgb(180, 172, 172);
 }
 
 
@@ -82,18 +85,25 @@
     display: block;
     text-align: left;
   }
-  .topnav.responsive div { /* visar contact länk i öppen burger menu*/
+  /* visar contact "contact"-länk i öppen burger menu*/
+  .topnav.responsive div { 
     float: none;
     display: block;
     text-align: left;
+    width: 100%;
    }
   /* denna visar dropdown content*/
   .topnav.responsive .dropdown-content a{ 
     display: block;
     background-color: aliceblue;
   }
-
-
+/* får den under rätt flik :p */
+.dropdown-content {
+  position: sticky;
+}
+.topnav.responsive .dropdown-content a:hover {
+  background-color: rgb(180, 172, 172);
+}
 
 }
 
